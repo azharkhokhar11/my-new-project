@@ -6,10 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\AddCategoryController;
 use App\Http\Controllers\Admin\AddProductController;
-use App\Http\Controllers\OrderController;
-use App\Http\Requests\RegisterRequest;
-
-
+use App\Http\Controllers\OrdersController;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/login', function () {
     return view('login');
@@ -24,13 +22,13 @@ Route::view('/register','register');
 Route::post('/login',[UserController::class,'login']);
 Route::post('/register',[UserController::class,'register']);
 Route::get('/',[ProductController::class,'index']);
-Route::get('detail/{id}',[ProductController::class,'detail']);
+Route::get('detail/{product}',[ProductController::class,'show']);
 Route::post('add_to_cart',[ProductController::class,'addToCart']);
 Route::get('cartlist',[ProductController::class,'cartList']);
 Route::get('removecart/{id}',[ProductController::class,'removecart']);
 Route::get('ordernow',[ProductController::class,'orderNow']);
 Route::post('orderplace',[ProductController::class,'orderPlace']);
-Route::get('myorders',[OrderController::class,'myOrders']);
+Route::get('myorders',[OrdersController::class,'index']);
 //Route::get('mobile',[ProductController::class,'mobile']);
 //Route::get('watch',[ProductController::class,'watch']);
 Route::get('detailwatch/{id}',[ProductController::class,'detailwatch']);

@@ -9,7 +9,7 @@ class Product extends Model
     protected $fillable = ['name', 'price', 'category', 'description', 'gallery'];
 
     // Define relationship with Category
-    public function categoryName()
+    public function category()
     {
         return $this->belongsTo(Category::class, 'category', 'id');
     }
