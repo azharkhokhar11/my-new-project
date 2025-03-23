@@ -101,18 +101,18 @@ class ProductController extends Controller
         $req->input();
         return redirect('/');
      }
-     function myOrders(){
-        if(session()->has('user')){
-            $userId = Session::get('user')['id'];
-           $products = DB::table('orders')
-            ->join('products','orders.product_id','=','products.id')
-            ->where('orders.user_id',$userId)
-            ->get();
-            return view('myorders',['products'=>$products]);
-        }else{
-            return redirect('login');
-        }
-     }
+    //  function myOrders(){
+    //     if(session()->has('user')){
+    //         $userId = Session::get('user')['id'];
+    //        $products = DB::table('orders')
+    //         ->join('products','orders.product_id','=','products.id')
+    //         ->where('orders.user_id',$userId)
+    //         ->get();
+    //         return view('myorders',['products'=>$products]);
+    //     }else{
+    //         return redirect('login');
+    //     }
+    //  }
 
     //  function mobile(){
     //     $products = Product::where('category', "1")->get();

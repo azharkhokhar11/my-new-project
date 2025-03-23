@@ -4,27 +4,25 @@
     <div class="col-sm-10">
 <div class="trending-wrapper1">
     <h3>My Orders</h3>
-    @foreach($products as $item)
-    <div class="row cart-list-divider">
-        <div class="col-sm-3">
-    <a href="detail/{{$item->id}}">
-    <img class="trending-image" src="{{$item->gallery}}">
-    </a>
-</div>
-<div class="col-sm-4">   
-    <div class="">
-        <h4>{{ $item->name }}</h4>
-        <h6>{{ $item->description }}</h6>   
-        <p>Price: {{ $item->price }}</p>
-        <p>Delivery Status: {{ $item->status }}</p>
-        <p>Address: {{ $item->address }}</p>
-        <p>Payment Method: {{ $item->payment_method }}</p>
-        <p>Payment Status: {{ $item->payment_status }}</p>
-        
-      </div>
-</div>
-    </div>
-    @endforeach
+    @foreach($products as $order)
+            <div class="row cart-list-divider">
+                <div class="col-sm-2 ">
+                    <a href="detail/{{$order->product->id ?? 'null'}}">
+                        <img class="trending-image" src="{{ $order->product->gallery ?? 'default.jpg' }}" alt="Product Image">
+                    </a>
+                </div>
+                <div class="col-sm-5">   
+                        <h4 class="mb-1">{{ $order->product->name ?? 'Product Not Found' }}</h4>
+                        <p >{{ $order->product->description ?? '' }}</p>   
+                        <p class="mb-1"><b>Price:</b> {{ $order->product->price ?? 'N/A' }}</p>
+                        <p class="mb-1"><b>Delivery Status:</b> {{ $order->status }}</p>
+                        <p class="mb-1"><b>Address:</b> {{ $order->address }}</p>
+                        <p class="mb-1"><b>Payment Method:</b> {{ $order->payment_method }}</p>
+                        <p class="mb-1"><b>Payment Status:</b> {{ $order->payment_status }}</p>
+                    
+                </div>
+            </div>
+            @endforeach   
 </div>
 </div>
 </div>

@@ -6,6 +6,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\AddCategoryController;
 use App\Http\Controllers\Admin\AddProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Requests\RegisterRequest;
+
+
 
 Route::get('/login', function () {
     return view('login');
@@ -26,7 +30,7 @@ Route::get('cartlist',[ProductController::class,'cartList']);
 Route::get('removecart/{id}',[ProductController::class,'removecart']);
 Route::get('ordernow',[ProductController::class,'orderNow']);
 Route::post('orderplace',[ProductController::class,'orderPlace']);
-Route::get('myorders',[ProductController::class,'myOrders']);
+Route::get('myorders',[OrderController::class,'myOrders']);
 //Route::get('mobile',[ProductController::class,'mobile']);
 //Route::get('watch',[ProductController::class,'watch']);
 Route::get('detailwatch/{id}',[ProductController::class,'detailwatch']);
