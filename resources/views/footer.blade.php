@@ -1,17 +1,3 @@
-<!-- <div class="card card1 ">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-      <p>Copyright <i class="bi bi-c-circle"></i> 2024 allmobile.com  
-      <i class="bi bi-youtube"></i>
-      <i class="bi bi-facebook"></i>
-      <i class="bi bi-tiktok"></i>
-</p>
-     
-  </div>
-</div>   -->
-
 <div class="card">
   <div class="card-body">
     <div class="content-wrapper">
@@ -34,3 +20,4 @@
     </div>
   </div>
 </div>
+

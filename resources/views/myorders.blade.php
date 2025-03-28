@@ -4,6 +4,9 @@
     <div class="col-sm-10">
 <div class="trending-wrapper1">
     <h3>My Orders</h3>
+    @if($products->isEmpty()) 
+                <p class="alert alert-warning">You have no orders yet.</p>
+    @else
     @foreach($products as $order)
             <div class="row cart-list-divider">
                 <div class="col-sm-2 ">
@@ -22,7 +25,8 @@
                     
                 </div>
             </div>
-            @endforeach   
+            @endforeach
+            @endif   
 </div>
 </div>
 </div>

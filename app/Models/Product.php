@@ -2,16 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Product extends Model
+class Product extends Pivot
 {
-    protected $fillable = ['name', 'price', 'category', 'description', 'gallery'];
+    protected $table = 'products';
+    protected $fillable = ['name', 'price', 'category_id', 'description', 'gallery', 'stock_count'];
 
     // Define relationship with Category
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category', 'id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
-    //
+    // Define relationship with Cart
+    public function cart()
+    {
+        return $this->belongsTo(Cart::class, 'product_id', 'id');
+    }
+
 }

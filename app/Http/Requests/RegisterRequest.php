@@ -19,6 +19,7 @@ class RegisterRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+   
     public function rules(): array
     {
         return [
@@ -26,9 +27,8 @@ class RegisterRequest extends FormRequest
             'email' => 'required|email|max:50|unique:users,email',
             'password' => 'required|string|min:5|confirmed',
             'password_confirmation' => 'required|same:password',
-        ];
+        ];       
     }
-
     public function messages(): array
     {
         return [

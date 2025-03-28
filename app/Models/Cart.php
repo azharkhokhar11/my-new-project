@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Cart extends Model
+class Cart extends Pivot
 {
-    public $table = "cart";
-    //
+    protected $table = 'carts';
+
+// Define relationship with product
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
+    
 }
