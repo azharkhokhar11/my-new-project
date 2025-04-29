@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     function index($id){
-        $products = Product::where('category', $id)->get();
+        $products = Product::where('category_id', $id)->get();
         return view('mobile',['products'=>$products]); 
     }
     //

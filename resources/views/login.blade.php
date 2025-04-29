@@ -8,6 +8,12 @@
         </script>
     {{ session()->forget('success') }}
     @endif
+    @if (session('info'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('info') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div class="container p-5">
     <div class="row justify-content-center">
         <div class="col-sm-4">

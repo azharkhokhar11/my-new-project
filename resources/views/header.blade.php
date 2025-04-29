@@ -1,13 +1,13 @@
 <?php
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartsController;
 $total = 0;
 if(Session::has('user')){
-  $total = ProductController::cartItem();
+  $total = CartsController::index();
 }
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">E-Comm</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ if(Session::has('user')){
   </button>
   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
   <li><a class="dropdown-item" href="/allproduct">All Products</a></li>
-    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+    <li><a class="dropdown-item" href="/dashboard">All Categories</a></li>
     <li><a class="dropdown-item" href="/addcategory">Add Category</a></li>
     <li><a class="dropdown-item" href="/addproduct">Add Product</a></li>
   </ul>
@@ -46,8 +46,8 @@ if(Session::has('user')){
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/cartlist">Cart({{$total}})</a>
+      <li class="nav-item">     
+        <a class="nav-link" href="/cartlist">Cart({{$total}})</a>       
       </li>
       @if(Session::has('user'))
       <li class="nav-item dropdown">

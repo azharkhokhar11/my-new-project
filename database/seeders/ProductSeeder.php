@@ -16,39 +16,62 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
            
         [
-            'name'=>'Ultra Smart Watch With 10 Straps',
-            'price'=>'1909',
-            'category'=>'2',
-            'description'=>'Turn on the sleep mode, advice to help you sleep, even it is a nap, the watch will not miss.',
-            'gallery'=>'https://images.priceoye.pk/ultra-10-smart-watch-pakistan-priceoye-bdr4e.jpg',
+            'name'=>'M10 TWS Wireless Bluetooth Earbuds',
+            'price'=>'699',
+            'category_id'=>'3',
+            'description'=>'The M10 TWS Earbuds provide high-quality audio. These earbuds are equipped with innovative sound gadgets that produce crystal-clear sound with powerful bass and sharp treble, letting you experience your favorite tunes and movies.',
+            'gallery'=>'https://images.priceoye.pk/m10-tws-wireless-bluetooth-earbuds-pakistan-priceoye-c02r7-500x500.webp',
+            'stock_count'=>'19',
+            'created_at' => now(),
+            'updated_at' => now(),
         ],
         [
-            'name'=>'Ultra Smart Watch With 10 Straps',
+            'name'=>'Air 31 TWS Transparent Earbuds',
+            'price'=>'799',
+            'category_id'=>'3',
+            'description'=>'It has accurate display of case and each headset battery level. 
+            It has touch sensor on both earbuds allows you to answer calls or switch music without 
+            resching your phone',
+            'gallery'=>'https://images.priceoye.pk/air-31-tws-transparent-earbuds-pakistan-priceoye-mtv4f-500x500.webp',
+            'stock_count'=>'0',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name'=>'Lenovo HE05X Neckband Wireless',
+            'price'=>'999',
+            'category_id'=>'3',
+            'description'=>'It has large battery capacity, using low-power micro-power technology 
+            combined with chip loe-power technology, greately improving the use time',
+            'gallery'=>'https://images.priceoye.pk/lenovo-he05x-neckband-wireless-pakistan-priceoye-cd8lm-500x500.webp',
+            'stock_count'=>'9',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name'=>'Redmi Buds 4 Active',
+            'price'=>'4199',
+            'category_id'=>'3',
+            'description'=>'Each earbud comes equipped with a high-sensitivity microphone that helps 
+            reduce background noise interruptions, ensuring clear speech for effective communication, 
+            even in noisy environments.',
+            'gallery'=>'https://images.priceoye.pk/redmi-buds-4-active-pakistan-priceoye-0laiv-500x500.webp',
+            'stock_count'=>'0',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name'=>'Lenovo LP75 Wireless Ear-hook Sports Headphones',
             'price'=>'3499',
-            'category'=>'2',
-            'description'=>'Large color touchscreen with a hih resolution of 320 x 320 pixels can dislpay vivid and life like visuals which are so captivating that you will nevet want to look away. Its responsive touch lets you effortlessly control the watch.',
-            'gallery'=>'https://images.priceoye.pk/realme-watch-pakistan-priceoye-07yxc.jpg',
-        ],
-        [
-            'name'=>'Xiaomi Redmi Watch 5 Active',
-            'price'=>'8699',
-            'category'=>'2',
-            'description'=>'Clear calling experience with the help of best in the segment noise cancellation on your wrist',
-            'gallery'=>'https://images.priceoye.pk/xiaomi-redmi-watch-5-active-pakistan-priceoye-81y8e.jpeg',
-        ],
-        [
-            'name'=>'G9 Ultra Pro Smartwatch',
-            'price'=>'2799',
-            'category'=>'2',
-            'description'=>'You will get timely notifications about what is happening on your phone without having to look at it time and again. This smartwatch has functions ranging from the number of steps you take in a day to sleep monitoring to fine tune your daily living. Plus, voice assistant options in some watches help you perform multiple functions with your voice.',
-            'gallery'=>'https://images.priceoye.pk/g9-ultra-pro-smartwatch-pakistan-priceoye-8n6fq.jpg',
-        ],
-        [
-            'name'=>'Zero Delta Smartwatch',
-            'price'=>'8999',
-            'category'=>'2',
-            'description'=>'The expansive 2.04" AMOLED display offer exceptional clarity and vivid colors. Every detail is reproduced with stunning precision, making it a joy to navigate menus, view messages and track your fitness progress.',
-            'gallery'=>'https://images.priceoye.pk/zero-delta-smartwatch-pakistan-priceoye-evbwf.jpg',
+            'category_id'=>'3',
+            'description'=>'Adaptive Equalizer with Galaxy AI adjusts audio based on how your Buds 
+            sit in your ears. That means every time you put Buds in, you can bring out the best in 
+            every playlist. Let Adaptive Noise Control with Galaxy AI work its magic to automatically 
+            tune out unwanted conversation, car noise, and more.',
+            'gallery'=>'https://images.priceoye.pk/lenovo-lp75-wireless-ea…s-headphones-pakistan-priceoye-nykud-500x500.webp',
+            'stock_count'=>'99',
+            'created_at' => now(),
+            'updated_at' => now(),
         ],
         ]);
         //

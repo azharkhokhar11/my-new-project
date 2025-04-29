@@ -15,12 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->priority([
-            \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
-            \Illuminate\Cookie\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+            \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,            
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class,
             \Illuminate\Routing\Middleware\ThrottleRequestsWithRedis::class,
@@ -31,10 +31,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
         ]);
 
-        $middleware->append(\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class);
-        $middleware->append(\Illuminate\Session\Middleware\StartSession::class);
-        $middleware->append(\Illuminate\View\Middleware\ShareErrorsFromSession::class);
-         $middleware->append(UserAuth::class);
+        // $middleware->append(\Illuminate\Session\Middleware\StartSession::class);
+        // $middleware->append(\Illuminate\View\Middleware\ShareErrorsFromSession::class);
+        // $middleware->append(\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class);       
+        $middleware->append(UserAuth::class);
         
         //
     })

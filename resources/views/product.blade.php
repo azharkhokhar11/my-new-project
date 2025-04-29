@@ -1,5 +1,12 @@
 @extends('master')
 @section('content')
+@if(session('success'))
+<script>
+            $(document).ready(function() {
+                toastr.success("{{ session('success') }}");
+            });
+        </script>
+    @endif
 <div class="custom-product">
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-indicators">

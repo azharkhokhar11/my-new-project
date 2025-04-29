@@ -28,53 +28,78 @@
 
                         <!-- Product Name -->
                         <div class="col-md-6">
-                            <label class="form-label">Product Name</label>
-                            <input type="text" required class="form-control" name="name" 
+                            <label class="form-label">Product Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="name" 
                                    value="{{ isset($product) ? $product->name : '' }}" 
                                    placeholder="Enter Product Name">
+                            @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Product Price -->
                         <div class="col-md-6">
-                            <label class="form-label">Price</label>
-                            <input type="number" required class="form-control" name="price" 
+                            <label class="form-label">Price <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="price" 
                                    value="{{ isset($product) ? $product->price : '' }}" 
                                    placeholder="Enter Price">
+                            @error('price')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Product Category (Dropdown) -->
                         <div class="col-md-6">
-                            <label class="form-label">Category</label>
-                            <select name="category" required class="form-select">
+                            <label class="form-label">Category <span class="text-danger">*</span></label>
+                            <select name="category_id" class="form-select">
                                 <option value="">Select Category</option>
                                 @foreach($categories as $cat)
                                     <option value="{{ $cat->id }}" 
-                                        {{ isset($product) && $product->category == $cat->id ? 'selected' : '' }}>
+                                        {{ isset($product) && $product->category_id == $cat->id ? 'selected' : '' }}>
                                         {{ $cat->name }}
                                     </option>
                                 @endforeach
                             </select>
+                            @error('category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Product Description -->
                         <div class="col-md-6">
-                            <label class="form-label">Description</label>
-                            <textarea required class="form-control" name="description" 
+                            <label class="form-label">Description <span class="text-danger">*</span></label>
+                            <textarea class="form-control" name="description" 
                                       placeholder="Enter Product Description">{{ isset($product) ? $product->description : '' }}</textarea>
+                            @error('description')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Image URL (Gallery) -->
                         <div class="col-md-6">
-                            <label class="form-label">Image URL</label>
-                            <input type="text" class="form-control" required name="gallery" 
+                            <label class="form-label">Image URL <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="gallery" 
                                    value="{{ isset($product) ? $product->gallery : '' }}" 
                                    placeholder="Enter Image URL">
+                            @error('gallery')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Stock Count <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="stock_count" 
+                                   value="{{ isset($product) ? $product->stock_count : '' }}" 
+                                   placeholder="Enter Stock Count">
+                            @error('stock_count')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Live Image Preview -->
                         <div class="col-md-6 text-center">
                             @if(isset($product) && $product->gallery)
-                                <img src="{{ $product->gallery }}" class="img-thumbnail preview-img">
+                                <img src="{{ $product->gallery }}" alt="No image available" class="img-thumbnail preview-img">
                             @endif
                         </div>
 
